@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      let counter = 0;
+      // This is the function to count number
+      function increase() {
+        counter++;
+        document.querySelector('#counter').innerHTML = counter;
+        if (counter % 10 === 0) {
+          alert(`Counter is at ${counter}`);
+        }
+      }
+    </script>
+    <title>Count number with condition</title>
+  </head>
+  <body>
+    <h1 id="counter">0</h1>
+    <button onclick="increase()">Count up</button>
+  </body>
+</html>
