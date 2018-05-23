@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // Creating event handler for button
+      document.addEventListener('DOMContentLoaded', () => {
+        // handle with submit button, should not to submit nothing
+        document.querySelector('#submit-button').disabled = true;
+        document.querySelector('#task-input').onkeyup = () => {          
+          if (document.querySelector('#task-input').value.length > 0) {
+            document.querySelector('#submit-button').disabled = false;
+          } else {
+            document.querySelector('#submit-button').disabled = true;
+          }
+        };
+        document.querySelector('#task-form').onsubmit = function(){
+          // get the input field as the item for task-List
+          const li = document.createElement('li');
+          li.innerHTML = document.querySelector('#task-input').value;
+          // add new item to task-List
+          document.querySelector('#task-list').append(li);
+          // clear the input field and disable submit button AGAIN
+          document.querySelector('#task-input').value = '';
+          document.querySelector('#submit-button').disabled = true;
+          // not to reload the page
+          return false;
+        };
+      });
+    </script>
+    <title>To-do List</title>
+  </head>
+  <body>
+    <h1>To-do list</h1>
+    <ul id="task-list"></ul>
+    <form id="task-form">
+      <input id="task-input" type="text" autofocus autocomplete="off" placeholder="Input your task">
+      <input id="submit-button" type="submit">
+    </form>
+  </body>
+</html>
