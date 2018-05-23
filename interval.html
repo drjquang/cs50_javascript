@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      // Set timer
+      document.addEventListener('DOMContentLoaded', () => {
+        setInterval(count, 2000);
+      });
+      // Action when timer is triggered
+      let counter = 0;
+      function count() {
+        counter++;
+        document.querySelector('h1').innerHTML = counter;
+      }
+    </script>
+    <title>Auto increase</title>
+  </head>
+  <body>
+    <h1>0</h1>
+  </body>
+</html>
